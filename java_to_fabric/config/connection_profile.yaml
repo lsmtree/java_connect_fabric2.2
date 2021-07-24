@@ -1,0 +1,90 @@
+name: "Java-To-Fabric 2.2"
+description: "Fabric连接配置文件"
+version: "1.0"
+# "x-"开头的是自定义属性
+x-type: "test"
+client:
+  organization: org1.example.com
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+channels:
+  mychannel:
+    orderers:
+      - orderer.example.com
+    peers:
+      peer0.org1.example.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+      peer0.org2.example.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+
+organizations:
+  org1.example.com:
+    mspid: Org1MSP
+    peers:
+      - peer0.org1.example.com
+    certificateAuthorities:
+      - ca.org1.example.com
+    signedCert:
+      path: config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem
+    adminPrivateKey:
+      path: config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/priv_sk
+  org2.example.com:
+    mspid: Org2MSP
+    peers:
+      - peer0.org2.example.com
+    signedCert:
+      path: config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/Admin@org2.example.com-cert.pem
+    adminPrivateKey:
+      path: config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/priv_sk
+
+orderers:
+  orderer.example.com:
+    url: grpcs://192.168.66.126:7050
+    grpcOptions:
+      grpc.keepalive_time_ms: 360000
+      grpc.keepalive_timeout_ms: 180000
+      hostnameOverride: orderer.example.com
+      sgrpc-max-send-message-length: 15
+      ssl-target-name-override: orderer.example.com
+    tlsCACerts:
+      path: config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+
+peers:
+  peer0.org1.example.com:
+    url: grpcs://192.168.66.126:7051
+    grpcOptions:
+      hostnameOverride: peer0.org1.example.com
+      ssl-target-name-override: peer0.org1.example.com
+      request-timeout: 12000
+    tlsCACerts:
+      path: config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+
+  peer0.org2.example.com:
+    url: grpcs://192.168.66.126:9051
+    grpcOptions:
+      hostnameOverride: peer0.org2.example.com
+      ssl-target-name-override: peer0.org2.example.com
+      request-timeout: 12000
+    tlsCACerts:
+      path: config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+
+#证书生成机构，可以理解为加入新节点或组织时获取对应证书。实质是Fabric-CA的作用
+certificateAuthorities:
+  ca.org1.example.com:
+    url: https://192.168.66.126:7054
+    httpOptions:
+      verify: false
+    registrar:
+      - enrollId: admin
+        enrollSecret: adminpw
+    caName: ca-org1
+    tlsCACerts:
+      path: config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/ca.crt
