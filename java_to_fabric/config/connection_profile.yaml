@@ -55,7 +55,7 @@ orderers:
       sgrpc-max-send-message-length: 15
       ssl-target-name-override: orderer.example.com
     tlsCACerts:
-      path: config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+      path: config/example.com/orderers/orderer.example.com/tls/ca.crt
 
 peers:
   peer0.org1.example.com:
