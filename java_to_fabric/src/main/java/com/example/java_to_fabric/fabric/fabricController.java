@@ -1,4 +1,4 @@
-package com.example.java_to_fabric.fabric;
+﻿package com.example.java_to_fabric.fabric;
 
 import org.hyperledger.fabric.sdk.*;
 import org.hyperledger.fabric.sdk.exception.InvalidArgumentException;
@@ -51,7 +51,7 @@ public class fabricController {
         } catch (InvalidArgumentException e) {
             throw new InvalidArgumentException("合约名或方法名错误",e);
         } catch (ProposalException e) {
-            throw new ProposalException("请求放松失败",e);
+            throw new ProposalException("请求发送失败",e);
         }
         return responses.iterator().next().getProposalResponse().getResponse().getPayload().toStringUtf8();
     }

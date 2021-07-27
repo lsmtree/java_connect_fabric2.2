@@ -1,5 +1,5 @@
 # java_connect_fabric2.2
-java连接 fabric2.2 网络并调用 fabar 的java链码
+java连接 fabric2.2 网络并调用 fabcar 的java链码
 
 # Java_To_Fabric
 
@@ -23,7 +23,7 @@ java连接 fabric2.2 网络并调用 fabar 的java链码
 
 如：fabric-samples中的fabcar链码的queryAllCars方法的查询结果如下
 
-<img src="D:/IDEA项目集合/我的开源/Java_To_Fabric_Demo/iamges/image-20210724172456561.png"/>
+<img src="./iamges/image-20210724172456561.png"/>
 
 (若无法完成该部分工作，建议先学会fabric2.2网络的基本部署。)
 
@@ -85,7 +85,7 @@ peer lifecycle chaincode package fabcar.tar.gz \
 
 ​	启动项目成功后访问  `http://localhost:8080/getAllCars` ，结果图如下
 
-<img src="D:/IDEA项目集合/我的开源/Java_To_Fabric_Demo/iamges/image-20210724182630567.png"/>
+<img src="./iamges/image-20210724182630567.png"/>
 
 
 
