@@ -1,6 +1,8 @@
 # java_connect_fabric2.2
 java连接 fabric2.2 网络并调用 fabcar 的java链码
 
+update:2021/08/06
+
 # Java_To_Fabric
 
 本项目为fabric-sdk-java 2.2 连接 fabric 2.2 网络并调用fabcar的java链码的查询方法的简单demo
