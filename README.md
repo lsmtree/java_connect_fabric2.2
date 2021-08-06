@@ -89,6 +89,10 @@ peer lifecycle chaincode package fabcar.tar.gz \
 
 
 
+## 三、Fabric测试
+
+待完善
+
 
 
 ## 参考资料
