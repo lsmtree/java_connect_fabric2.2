@@ -35,15 +35,7 @@ B站学习资源：
 
 ​      效果：该up主讲解清晰友好，且后续会有fabric链码和go-sdk内容的推出
 
-[手动搭建hyperledger fabric v2.x 网络（一）](https://www.bilibili.com/video/BV1EK411F7zM)
-
-[手动搭建hyperledger fabric v2.x 网络（二）](https://www.bilibili.com/video/BV1nK4y1K7s6)
-
-[手动搭建hyperledger fabric v2.x 网络（三）](https://www.bilibili.com/video/BV1Rh411U7CR)
-
-[手动搭建hyperledger fabric v2.x 网络（四）完结](https://www.bilibili.com/video/BV1EK4y1o73U)
-
-[网络搭建（四）补充视频](https://www.bilibili.com/video/BV1py4y147ni)
+[手动搭建hyperledger fabric v2.x 网络](https://www.bilibili.com/video/BV1EK411F7zM)
 
 
 
@@ -53,7 +45,7 @@ B站学习资源：
 ------java_to_fabric           #springboot
      |
 ------twonodes                 #fabric 网络
-      |
+     |
        ----chaincode           #链码存放路径
        ----channel-artifacts   #创始块、通道配置文件、锚节点配置文件
        ----crypto-config       #组织的证书材料
@@ -92,6 +84,10 @@ peer lifecycle chaincode package fabcar.tar.gz \
 
 
 ## 三、Fabric测试
+
+推荐使用Caliper
+
+### 四、实战项目
 
 待完善
 
