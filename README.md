@@ -87,9 +87,6 @@ peer lifecycle chaincode package fabcar.tar.gz \
 
 推荐使用Caliper
 
-### 四、实战项目
-
-待完善
 
 
 
